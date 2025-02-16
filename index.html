@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Burger-King-Online-Bill-Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container my-5 ">
+    <div class="row justify-content-center ">
+        <div class="col-md-8 ">
+            
+            <form name="orderForm" class="order-form" id="shadow">
+                
+                <div class="header" >
+                    <img src="./Burgerlogo.png"  class="logo border rounded-3 " alt="Burger King Logo">
+                    <h2 class="d-inline ms-3" style="color: #502314;"><b>Burger King</b></h2>
+                </div>
+
+                
+                <div class="row my-3">
+                    <div class="col-md-6">
+                        <label for="orderId" class="form-label">Order ID:</label>
+                        <input type="number"  id="orderId" class="form-control" name="orderId" placeholder="Enter ID">
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img src="https://img.pikbest.com/origin/09/23/89/54YpIkbEsTWnu.png!w700wp" class="img-fluid" height="300" width="200" alt="Burger">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="customerName" class="form-label">Customer Name:</label>
+                    <input type="text" id="customerName" class="form-control" name="customerName" placeholder="Enter name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="mobileNo" class="form-label">Mobile No:</label>
+                    <input type="number" id="mobileNo" class="form-control" name="mobileNo" placeholder="Enter mobile">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail:</label>
+                    <input type="email" id="email" class="form-control" name="email" placeholder="Enter email">
+                </div>
+
+                
+                <fieldset class="mb-3">
+                    <legend>Choose Items:</legend>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="items" value="300" onchange="calculateAmount()">
+                        <label class="form-check-label">Normal Burger: ₹300</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="items" value="400" onchange="calculateAmount()">
+                        <label class="form-check-label">Special Burger: ₹400</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="items" value="450" onchange="calculateAmount()">
+                        <label class="form-check-label">Extra Cheese Burger: ₹450</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="items" value="500" onchange="calculateAmount()">
+                        <label class="form-check-label">Chicken Burger: ₹500</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="items" value="550" onchange="calculateAmount()">
+                        <label class="form-check-label">Burger with Fries: ₹550</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="items" value="50" onchange="calculateAmount()">
+                        <label class="form-check-label">Cold Drink: ₹50</label>
+                    </div>
+                </fieldset>
+
+                
+                <div class="mb-3">
+                    <label class="form-label">Total Amount:</label>
+                    <input type="text" id="totalAmount" class="form-control" name="totalAmount" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">GST (8% Included):</label>
+                    <input type="text" id="gstAmount" class="form-control" name="gstAmount" readonly>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Net Amount:</label>
+                    <input type="text" id="netAmount" class="form-control" name="netAmount" readonly>
+                </div>
+
+                
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='index.html'">Home</button>
+                    <button type="reset" class="btn btn-warning">Reset</button>
+                    <button type="button" class="btn btn-success" onclick="window.print()">Print</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="./script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
